@@ -159,18 +159,36 @@ namespace PhoneBook.Controllers
         // GET: ViewPerson/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            PhoneBookDbEntities2 db = new PhoneBookDbEntities2();
+            foreach (Person p in db.People)
+            {
+                if (p.PersonId == id)
+                {
+                    db.People.Remove(p);
+                }
+            }
+            db.SaveChanges();
+            return RedirectToAction("Create", "ViewPerson");
+            //return View();
         }
 
         // POST: ViewPerson/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, ViewPersonModel obj)
         {
             try
             {
+                PhoneBookDbEntities2 db = new PhoneBookDbEntities2();
+                foreach(Person p in db.People)
+                {
+                    if(p.PersonId == id)
+                    {
+                        db.People.Remove(p);
+                    }
+                }
                 // TODO: Add delete logic here
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Create", "ViewPerson");
             }
             catch
             {
