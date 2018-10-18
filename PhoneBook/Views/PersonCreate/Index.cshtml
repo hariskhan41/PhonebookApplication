@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PhoneBook.Person>
+﻿@model IEnumerable<PhoneBook.Models.PersonViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -11,6 +11,7 @@
 </p>
 <table class="table">
     <tr>
+        
         <th>
             @Html.DisplayNameFor(model => model.FirstName)
         </th>
@@ -58,6 +59,7 @@
 
 @foreach (var item in Model) {
     <tr>
+        
         <td>
             @Html.DisplayFor(modelItem => item.FirstName)
         </td>
@@ -101,9 +103,10 @@
             @Html.DisplayFor(modelItem => item.EmailId)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PersonId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PersonId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PersonId })
+            @Html.ActionLink("Add Contact", "Create", "AddContacts", new { id = item.PersonId }, null) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.PersonId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.PersonId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.PersonId })
         </td>
     </tr>
 }

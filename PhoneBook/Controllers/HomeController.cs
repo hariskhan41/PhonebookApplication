@@ -26,12 +26,5 @@ namespace PhoneBook.Controllers
 
             return View();
         }
-
-        public ActionResult CreateContact()
-        {
-            ViewBag.Message = "Your create contact page.";
-
-            return View();
-        }
     }
 }

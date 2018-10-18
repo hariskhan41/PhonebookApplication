@@ -13,10 +13,10 @@ namespace PhoneBook
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PhoneBookDbEntities2 : DbContext
+    public partial class PhonebookDb1Entities : DbContext
     {
-        public PhoneBookDbEntities2()
-            : base("name=PhoneBookDbEntities2")
+        public PhonebookDb1Entities()
+            : base("name=PhonebookDb1Entities")
         {
         }
     

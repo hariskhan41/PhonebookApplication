@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="PhoneBookDbModelStoreContainer" CdmEntityContainer="PhoneBookDbEntities2">
+  <EntityContainerMapping StorageEntityContainer="PhonebookDb1ModelStoreContainer" CdmEntityContainer="PhonebookDb1Entities">
     <EntitySetMapping Name="AspNetRoles">
-      <EntityTypeMapping TypeName="PhoneBookDbModel.AspNetRole">
+      <EntityTypeMapping TypeName="PhonebookDb1Model.AspNetRole">
         <MappingFragment StoreEntitySet="AspNetRoles">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -10,7 +10,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="AspNetUserClaims">
-      <EntityTypeMapping TypeName="PhoneBookDbModel.AspNetUserClaim">
+      <EntityTypeMapping TypeName="PhonebookDb1Model.AspNetUserClaim">
         <MappingFragment StoreEntitySet="AspNetUserClaims">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -20,7 +20,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="AspNetUserLogins">
-      <EntityTypeMapping TypeName="PhoneBookDbModel.AspNetUserLogin">
+      <EntityTypeMapping TypeName="PhonebookDb1Model.AspNetUserLogin">
         <MappingFragment StoreEntitySet="AspNetUserLogins">
           <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
           <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
@@ -29,7 +29,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="AspNetUsers">
-      <EntityTypeMapping TypeName="PhoneBookDbModel.AspNetUser">
+      <EntityTypeMapping TypeName="PhonebookDb1Model.AspNetUser">
         <MappingFragment StoreEntitySet="AspNetUsers">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Email" ColumnName="Email" />
@@ -47,7 +47,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Contacts">
-      <EntityTypeMapping TypeName="PhoneBookDbModel.Contact">
+      <EntityTypeMapping TypeName="PhonebookDb1Model.Contact">
         <MappingFragment StoreEntitySet="Contact">
           <ScalarProperty Name="ContactId" ColumnName="ContactId" />
           <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
@@ -57,7 +57,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="People">
-      <EntityTypeMapping TypeName="PhoneBookDbModel.Person">
+      <EntityTypeMapping TypeName="PhonebookDb1Model.Person">
         <MappingFragment StoreEntitySet="Person">
           <ScalarProperty Name="PersonId" ColumnName="PersonId" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -77,7 +77,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="AspNetUserRoles" TypeName="PhoneBookDbModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="PhonebookDb1Model.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
       <EndProperty Name="AspNetRoles">
         <ScalarProperty Name="Id" ColumnName="RoleId" />
       </EndProperty>

@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{46204BBC-CE4B-4F47-9976-CFF35CB324CF}</ProjectGuid>
+    <ProjectGuid>{CAAE6B81-FF2A-4B35-92CB-73D30649E77B}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -198,52 +198,55 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="AspNetRole.cs">
-      <DependentUpon>PhoneBookDataModel.tt</DependentUpon>
+      <DependentUpon>PhonebookDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="AspNetUser.cs">
-      <DependentUpon>PhoneBookDataModel.tt</DependentUpon>
+      <DependentUpon>PhonebookDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="AspNetUserClaim.cs">
-      <DependentUpon>PhoneBookDataModel.tt</DependentUpon>
+      <DependentUpon>PhonebookDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="AspNetUserLogin.cs">
-      <DependentUpon>PhoneBookDataModel.tt</DependentUpon>
+      <DependentUpon>PhonebookDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Contact.cs">
-      <DependentUpon>PhoneBookDataModel.tt</DependentUpon>
+      <DependentUpon>PhonebookDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CreatePersonController.cs" />
-    <Compile Include="Controllers\EditPersonController.cs" />
+    <Compile Include="Controllers\AddContactsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ViewPersonController.cs" />
+    <Compile Include="Controllers\PersonCreateController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\CreatePersonModel.cs" />
-    <Compile Include="Models\EditPersonModel.cs" />
+    <Compile Include="Models\AddContactsViewModel.cs" />
+    <Compile Include="Models\DetailsViewModel.cs" />
+    <Compile Include="Models\EditContactsViewModel.cs" />
+    <Compile Include="Models\EditPersonViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\ViewPersonModel.cs" />
+    <Compile Include="Models\PersonCreateViewModel.cs" />
+    <Compile Include="Models\PersonViewModel.cs" />
+    <Compile Include="Models\requiredAttribute.cs" />
     <Compile Include="Person.cs">
-      <DependentUpon>PhoneBookDataModel.tt</DependentUpon>
+      <DependentUpon>PhonebookDbEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="PhoneBookDataModel.Context.cs">
+    <Compile Include="PhonebookDbEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PhoneBookDataModel.Context.tt</DependentUpon>
+      <DependentUpon>PhonebookDbEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="PhoneBookDataModel.cs">
+    <Compile Include="PhonebookDbEntities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PhoneBookDataModel.tt</DependentUpon>
+      <DependentUpon>PhonebookDbEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="PhoneBookDataModel.Designer.cs">
+    <Compile Include="PhonebookDbEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PhoneBookDataModel.edmx</DependentUpon>
+      <DependentUpon>PhonebookDbEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -255,15 +258,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="PhoneBookDataModel.Context.tt">
+    <Content Include="PhonebookDbEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PhoneBookDataModel.edmx</DependentUpon>
-      <LastGenOutput>PhoneBookDataModel.Context.cs</LastGenOutput>
+      <DependentUpon>PhonebookDbEntities.edmx</DependentUpon>
+      <LastGenOutput>PhonebookDbEntities.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="PhoneBookDataModel.tt">
+    <Content Include="PhonebookDbEntities.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PhoneBookDataModel.edmx</DependentUpon>
-      <LastGenOutput>PhoneBookDataModel.cs</LastGenOutput>
+      <DependentUpon>PhonebookDbEntities.edmx</DependentUpon>
+      <LastGenOutput>PhonebookDbEntities.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
@@ -272,12 +275,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="PhoneBookDataModel.edmx">
+    <EntityDeploy Include="PhonebookDbEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PhoneBookDataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>PhonebookDbEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="PhoneBookDataModel.edmx.diagram">
-      <DependentUpon>PhoneBookDataModel.edmx</DependentUpon>
+    <Content Include="PhonebookDbEntities.edmx.diagram">
+      <DependentUpon>PhonebookDbEntities.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -291,9 +294,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -301,6 +302,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
@@ -326,16 +328,15 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\CreatePerson\Create.cshtml" />
-    <Content Include="Views\CreatePerson\Index.cshtml" />
-    <Content Include="Views\ViewPerson\Create.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\ViewPerson\Edit.cshtml" />
+    <Content Include="Views\PersonCreate\Create.cshtml" />
+    <Content Include="Views\PersonCreate\Index.cshtml" />
+    <Content Include="Views\PersonCreate\Edit.cshtml" />
+    <Content Include="Views\AddContacts\Create.cshtml" />
+    <Content Include="Views\PersonCreate\Details.cshtml" />
+    <Content Include="Views\AddContacts\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\EditPerson\" />
-    <Folder Include="Views\EditView\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -364,9 +365,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>59710</DevelopmentServerPort>
+          <DevelopmentServerPort>18545</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:59710/</IISUrl>
+          <IISUrl>http://localhost:18545/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

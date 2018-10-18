@@ -1,0 +1,44 @@
+﻿@model IEnumerable<PhoneBook.Models.DetailsViewModel>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>
+    Details <br />
+</h2>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", "AddContacts", new { id = item.PersonId }, null) |
+            @Html.ActionLink("Delete", "Delete", "AddContacts", new { id = item.ContactId }, null)
+        </td>
+    </tr>
+}
+
+</table>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
